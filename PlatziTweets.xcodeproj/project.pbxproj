@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		498AEE690B742550250E63D1 /* Pods_PlatziTweets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3EDC2E71211BB3A494C053 /* Pods_PlatziTweets.framework */; };
 		B826A6D0268CD2050004E7BA /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B826A6CF268CD2050004E7BA /* Welcome.storyboard */; };
+		B826A6D2268CDF990004E7BA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A6D1268CDF990004E7BA /* WelcomeViewController.swift */; };
+		B826A6D4268CE0270004E7BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A6D3268CE0270004E7BA /* LoginViewController.swift */; };
+		B826A6D6268CE0300004E7BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B826A6D5268CE0300004E7BA /* RegisterViewController.swift */; };
 		B8428C3D268C1A7D006FEE12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8428C3C268C1A7D006FEE12 /* AppDelegate.swift */; };
 		B8428C41268C1A7D006FEE12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8428C40268C1A7D006FEE12 /* ViewController.swift */; };
 		B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8428C45268C1A7E006FEE12 /* Assets.xcassets */; };
@@ -20,6 +23,9 @@
 		50067B6CAD79E75CEEFFBAB2 /* Pods-PlatziTweets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlatziTweets.release.xcconfig"; path = "Target Support Files/Pods-PlatziTweets/Pods-PlatziTweets.release.xcconfig"; sourceTree = "<group>"; };
 		9A3EDC2E71211BB3A494C053 /* Pods_PlatziTweets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlatziTweets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B826A6CF268CD2050004E7BA /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		B826A6D1268CDF990004E7BA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		B826A6D3268CE0270004E7BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B826A6D5268CE0300004E7BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B8428C39268C1A7D006FEE12 /* PlatziTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8428C3C268C1A7D006FEE12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8428C40268C1A7D006FEE12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				B826A6CF268CD2050004E7BA /* Welcome.storyboard */,
+				B826A6D1268CDF990004E7BA /* WelcomeViewController.swift */,
+				B826A6D3268CE0270004E7BA /* LoginViewController.swift */,
+				B826A6D5268CE0300004E7BA /* RegisterViewController.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -226,6 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B826A6D4268CE0270004E7BA /* LoginViewController.swift in Sources */,
+				B826A6D6268CE0300004E7BA /* RegisterViewController.swift in Sources */,
+				B826A6D2268CDF990004E7BA /* WelcomeViewController.swift in Sources */,
 				B8428C41268C1A7D006FEE12 /* ViewController.swift in Sources */,
 				B8428C3D268C1A7D006FEE12 /* AppDelegate.swift in Sources */,
 			);
