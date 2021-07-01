@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
     //MARK: -Outlets
@@ -22,17 +24,9 @@ class RegisterViewController: UIViewController {
         view.endEditing(true)
         performRegister()
     }
-    
-    
-    /*
-     TODO:
-     Agregar los textfiel y action al botón
-     separar la acción en un metodo a parte para el action
-     mostrar el banner de error en caso de que el textfield esté vació
-     agregar banner para eventos en la contraseña
-     agregar banner para evento de login
-     */
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,6 +76,43 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        performSegue(withIdentifier: "showHome", sender: nil)
+        //realizamos el request
+        let request = RegisterRequest(email: email, password: password, names: name)
+        
+        //Iniciamos la carga...
+        SVProgressHUD.show()
+        
+        //Hacemos la llamada al servicio de red
+        SN.post(endpoint: EndPoints.register,
+                model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            //detenemos la carga
+            SVProgressHUD.dismiss()
+            
+            //debemos manejar los cases que hay para SNResultWithEntity
+            switch response{
+            case .success(let user):
+                //Se pudo realizar el login
+                self.performSegue(withIdentifier: "showHome", sender: user)
+                
+                DispatchQueue.main.async {
+                    FloatingNotificationBanner(title: "Sesión Iniciada",
+                                               subtitle: "Bienvenido \(user.user.names)",
+                                               style: .success).show()
+                }
+                
+            case .error(_):
+                //se produce un error, no se puede manejar su componente
+                NotificationBanner(title: "Error",
+                                   subtitle: "Hubo un problema al intentar validarte",
+                                   style: .danger).show()
+            case .errorResult(let entity):
+                //el error es manejable y devuelve una respuesta
+                NotificationBanner(title: "Error",
+                                   subtitle: "\(entity.error)",
+                                   style: .danger).show()
+            }
+        }
+        
     }
 }

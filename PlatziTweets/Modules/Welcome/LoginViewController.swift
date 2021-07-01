@@ -75,20 +75,28 @@ class LoginViewController: UIViewController {
             switch response{
             case .success(let user):
                 //Se pudo realizar el login
-                NotificationBanner(subtitle: "Bienvenido \(user.user.names)",
-                                   style: .success).show()
+                //NotificationBanner(subtitle: "Bienvenido \(user.user.names)",
+                  //                 style: .success).show()
+                self.performSegue(withIdentifier: "showHome", sender: user)
                 
-            case .error(let error):
+                DispatchQueue.main.async {
+                    FloatingNotificationBanner(title: "Sesión Iniciada",
+                                               subtitle: "Bienvenido \(user.user.names)",
+                                               style: .success).show()
+                }
+                
+            case .error(_):
                 //se produce un error, no se puede manejar su componente
-                return
+                NotificationBanner(title: "Error",
+                                   subtitle: "Hubo un problema al intentar validarte",
+                                   style: .danger).show()
             case .errorResult(let entity):
                 //el error es manejable y devuelve una respuesta
-                return
+                NotificationBanner(title: "Error",
+                                   subtitle: "\(entity.error)",
+                                   style: .danger).show()
             }
         }
-        
-        
-        //performSegue(withIdentifier: "showHome", sender: nil)
         
     }
 
