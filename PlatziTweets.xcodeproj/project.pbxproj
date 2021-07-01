@@ -24,6 +24,8 @@
 		B82E35E3268E301E009C07BC /* PostLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E35E2268E301E009C07BC /* PostLocation.swift */; };
 		B82E35E5268E339E009C07BC /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E35E4268E339E009C07BC /* EndPoints.swift */; };
 		B82E35E9268E3F05009C07BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E35E8268E3F05009C07BC /* HomeViewController.swift */; };
+		B82E35ED268E4BB9009C07BC /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82E35EB268E4BB9009C07BC /* TweetTableViewCell.swift */; };
+		B82E35EE268E4BB9009C07BC /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B82E35EC268E4BB9009C07BC /* TweetTableViewCell.xib */; };
 		B8428C3D268C1A7D006FEE12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8428C3C268C1A7D006FEE12 /* AppDelegate.swift */; };
 		B8428C41268C1A7D006FEE12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8428C40268C1A7D006FEE12 /* ViewController.swift */; };
 		B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8428C45268C1A7E006FEE12 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		B82E35E2268E301E009C07BC /* PostLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocation.swift; sourceTree = "<group>"; };
 		B82E35E4268E339E009C07BC /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		B82E35E8268E3F05009C07BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B82E35EB268E4BB9009C07BC /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		B82E35EC268E4BB9009C07BC /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		B8428C39268C1A7D006FEE12 /* PlatziTweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatziTweets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8428C3C268C1A7D006FEE12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8428C40268C1A7D006FEE12 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,15 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		B82E35EA268E4BA0009C07BC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B82E35EB268E4BB9009C07BC /* TweetTableViewCell.swift */,
+				B82E35EC268E4BB9009C07BC /* TweetTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B8428C30268C1A7C006FEE12 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +199,7 @@
 		B85075B1268D800700AE5DF6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B82E35EA268E4BA0009C07BC /* Cells */,
 				B85075B2268D801500AE5DF6 /* Home.storyboard */,
 				B82E35E8268E3F05009C07BC /* HomeViewController.swift */,
 			);
@@ -251,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B82E35EE268E4BB9009C07BC /* TweetTableViewCell.xib in Resources */,
 				B8428C49268C1A7E006FEE12 /* LaunchScreen.storyboard in Resources */,
 				B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */,
 				B826A6D0268CD2050004E7BA /* Welcome.storyboard in Resources */,
@@ -318,6 +333,7 @@
 				B826A6D6268CE0300004E7BA /* RegisterViewController.swift in Sources */,
 				B82E35D1268E2E9C009C07BC /* LoginResponse.swift in Sources */,
 				B826A6D2268CDF990004E7BA /* WelcomeViewController.swift in Sources */,
+				B82E35ED268E4BB9009C07BC /* TweetTableViewCell.swift in Sources */,
 				B8428C41268C1A7D006FEE12 /* ViewController.swift in Sources */,
 				B82E35E3268E301E009C07BC /* PostLocation.swift in Sources */,
 				B8428C3D268C1A7D006FEE12 /* AppDelegate.swift in Sources */,
