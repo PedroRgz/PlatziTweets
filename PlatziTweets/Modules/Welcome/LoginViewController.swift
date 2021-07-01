@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     
     //MARK: -Actions
     @IBAction func loginBtnAction(){
+        view.endEditing(true)
         performLogin()
     }
     
@@ -53,6 +54,8 @@ class LoginViewController: UIViewController {
                                style: .warning).show()
             return
         }
+        
+        performSegue(withIdentifier: "showHome", sender: nil)
         
     }
 

@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController {
     
     //MARK: -Actions
     @IBAction func registerBtnAction(){
+        view.endEditing(true)
         performRegister()
     }
     
@@ -81,6 +82,6 @@ class RegisterViewController: UIViewController {
             return
         }
         
-        print("Acciones terminadas...")
+        performSegue(withIdentifier: "showHome", sender: nil)
     }
 }

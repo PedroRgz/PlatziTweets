@@ -16,6 +16,7 @@
 		B8428C41268C1A7D006FEE12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8428C40268C1A7D006FEE12 /* ViewController.swift */; };
 		B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8428C45268C1A7E006FEE12 /* Assets.xcassets */; };
 		B8428C49268C1A7E006FEE12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8428C47268C1A7E006FEE12 /* LaunchScreen.storyboard */; };
+		B85075B3268D801500AE5DF6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85075B2268D801500AE5DF6 /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B8428C45268C1A7E006FEE12 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8428C48268C1A7E006FEE12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8428C4A268C1A7E006FEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B85075B2268D801500AE5DF6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		B826A6CC268CD18B0004E7BA /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				B85075B1268D800700AE5DF6 /* Home */,
 				B826A6CE268CD1E10004E7BA /* Welcome */,
 			);
 			path = Modules;
@@ -119,6 +122,14 @@
 				B8428C4A268C1A7E006FEE12 /* Info.plist */,
 			);
 			path = PlatziTweets;
+			sourceTree = "<group>";
+		};
+		B85075B1268D800700AE5DF6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B85075B2268D801500AE5DF6 /* Home.storyboard */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				B8428C49268C1A7E006FEE12 /* LaunchScreen.storyboard in Resources */,
 				B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */,
 				B826A6D0268CD2050004E7BA /* Welcome.storyboard in Resources */,
+				B85075B3268D801500AE5DF6 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
