@@ -135,7 +135,7 @@
                                             <constraint firstAttribute="height" constant="45" id="qOr-6k-iIp"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repetir contraseña" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEn-wL-XSS">
                                         <rect key="frame" x="0.0" y="165" width="374" height="45"/>
@@ -143,7 +143,7 @@
                                             <constraint firstAttribute="height" constant="45" id="uhU-qS-fAn"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAZ-dI-Iaj">
                                         <rect key="frame" x="0.0" y="220" width="374" height="45"/>
@@ -155,6 +155,9 @@
                                         <state key="normal" title="Registrarme">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerBtnAction" destination="QG0-44-7R8" eventType="touchUpInside" id="Bjt-Si-JyI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -173,7 +176,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registrarse" id="yYP-zt-Hgb"/>
                     <connections>
+                        <outlet property="emailTextField" destination="uvd-0s-g5X" id="x7r-EZ-pPh"/>
+                        <outlet property="nombreTextField" destination="w9V-MF-0sf" id="7T4-uI-MzV"/>
+                        <outlet property="passwordTextField" destination="6Ng-Ha-qEd" id="SDW-2x-pu6"/>
                         <outlet property="registerButton" destination="bAZ-dI-Iaj" id="PIJ-pu-gKI"/>
+                        <outlet property="repeatedPasswordTextField" destination="pEn-wL-XSS" id="9Zw-MZ-TYL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k5a-Jz-HJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

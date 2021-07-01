@@ -19,14 +19,6 @@ class LoginViewController: UIViewController {
         performLogin()
     }
     
-    /*
-     TODO:
-     -agregar los textfield y action del botón
-     -separar la acción en un metodo a parte para el action
-     mostrar el banner de error en caso de que el textfield esté vació
-     agregar banner para eventos en la contraseña
-     agregar banner para evento de login
-     */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +26,8 @@ class LoginViewController: UIViewController {
         setupUI()
     }
     
+    
+    //MARK: - Métodos privados
     private func setupUI(){
         //en este método se realizarán las modificaciones que se quieran realizar a la pantalla
         
@@ -42,13 +36,24 @@ class LoginViewController: UIViewController {
     }
     
     private func performLogin(){
-        guard let email = emailTextField.text, !email.isEmpty else {
+        guard let email = emailTextField.text,
+                          !email.isEmpty,
+                          email.contains("@") else {
             NotificationBanner(title: "Error",
-                               subtitle: "Debes indicar tu Email",
+                               subtitle: "Email inválido",
                                style: .warning).show()
             
             return
         }
+        
+        guard let password = passwordTextField.text,
+                             !password.isEmpty else {
+            NotificationBanner(title: "Error",
+                               subtitle: "Ingresa tu contraseña",
+                               style: .warning).show()
+            return
+        }
+        
     }
 
 }
