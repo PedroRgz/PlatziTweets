@@ -220,6 +220,9 @@
                                         <state key="normal" title="Iniciar Sesión">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginBtnAction" destination="nqt-0L-r7i" eventType="touchUpInside" id="EOJ-Lj-r7w"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -238,7 +241,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Iniciar Sesión" id="fjY-LW-qi3"/>
                     <connections>
+                        <outlet property="emailTextField" destination="1te-If-GmR" id="u6f-es-FtH"/>
                         <outlet property="loginButton" destination="IlS-Rh-tSy" id="HRB-HZ-W7c"/>
+                        <outlet property="passwordTextField" destination="QzR-66-IVv" id="bkl-bQ-eRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5on-Kv-2cp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
