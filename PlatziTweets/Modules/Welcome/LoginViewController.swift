@@ -7,6 +7,8 @@
 
 import UIKit
 import NotificationBannerSwift
+import Simple_Networking
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
     //MARK: -Outlets
@@ -55,7 +57,38 @@ class LoginViewController: UIViewController {
             return
         }
         
-        performSegue(withIdentifier: "showHome", sender: nil)
+        
+        //Primer debemos realizar el request
+        let request = LoginRequest(email: email, password: password)
+        
+        //Iniciamos la carga
+        SVProgressHUD.show()
+        
+        //Llamada a la libreria de red
+        SN.post(endpoint: EndPoints.login,
+                model: request) { (response: SNResultWithEntity<LoginResponse, ErrorResponse>) in
+            
+            //detenemos la carga
+            SVProgressHUD.dismiss()
+            
+            //debemos manejar los cases que hay para SNResultWithEntity
+            switch response{
+            case .success(let user):
+                //Se pudo realizar el login
+                NotificationBanner(subtitle: "Bienvenido \(user.user.names)",
+                                   style: .success).show()
+                
+            case .error(let error):
+                //se produce un error, no se puede manejar su componente
+                return
+            case .errorResult(let entity):
+                //el error es manejable y devuelve una respuesta
+                return
+            }
+        }
+        
+        
+        //performSegue(withIdentifier: "showHome", sender: nil)
         
     }
 
