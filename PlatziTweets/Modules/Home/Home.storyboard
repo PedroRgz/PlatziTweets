@@ -32,6 +32,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tweets" id="5NI-Si-Wyu"/>
+                    <connections>
+                        <outlet property="tableView" destination="sgs-QS-NW3" id="NLa-Rk-6JW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

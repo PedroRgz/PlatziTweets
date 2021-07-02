@@ -77,7 +77,8 @@ class LoginViewController: UIViewController {
                 //Se pudo realizar el login
                 //NotificationBanner(subtitle: "Bienvenido \(user.user.names)",
                   //                 style: .success).show()
-                self.performSegue(withIdentifier: "showHome", sender: user)
+                self.performSegue(withIdentifier: "showHome", sender: nil)
+                SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
                 
                 DispatchQueue.main.async {
                     FloatingNotificationBanner(title: "Sesión Iniciada",

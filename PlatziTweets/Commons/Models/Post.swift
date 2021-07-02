@@ -10,7 +10,7 @@ import Foundation
 struct Post:Codable {
     let id:String
     let author:User
-    let imagenUrl:String
+    let imageUrl:String
     let videoUrl:String
     let text:String
     let location:PostLocation

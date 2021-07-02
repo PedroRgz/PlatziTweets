@@ -94,6 +94,7 @@ class RegisterViewController: UIViewController {
             case .success(let user):
                 //Se pudo realizar el login
                 self.performSegue(withIdentifier: "showHome", sender: user)
+                SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
                 
                 DispatchQueue.main.async {
                     FloatingNotificationBanner(title: "Sesión Iniciada",

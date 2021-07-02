@@ -8,6 +8,6 @@
 import Foundation
 
 struct PostLocation:Codable {
-    let latitude:String
-    let longitude:String
+    let latitude:Double
+    let longitude:Double
 }
