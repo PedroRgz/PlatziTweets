@@ -21,13 +21,22 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ect-1q-jPH">
+                                <rect key="frame" x="338" y="812" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="JbP-bM-CTp" kind="presentation" id="tvX-YM-lJp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="sgs-QS-NW3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="N7a-vs-1A1"/>
                             <constraint firstItem="sgs-QS-NW3" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="b0e-f4-xAo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ect-1q-jPH" secondAttribute="bottom" constant="20" id="hsN-9N-kK8"/>
                             <constraint firstAttribute="bottom" secondItem="sgs-QS-NW3" secondAttribute="bottom" id="idt-Ak-t8p"/>
+                            <constraint firstItem="ect-1q-jPH" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-30" id="pVg-tV-7Na"/>
                             <constraint firstItem="sgs-QS-NW3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qda-ka-vx5"/>
                         </constraints>
                     </view>
@@ -39,6 +48,88 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.17391304347836" y="89.732142857142847"/>
+        </scene>
+        <!--Add Post View Controller-->
+        <scene sceneID="EXG-oB-zJt">
+            <objects>
+                <viewController id="JbP-bM-CTp" customClass="AddPostViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OzQ-xs-aml">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo Tweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-PK-Aja">
+                                <rect key="frame" x="20" y="10" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-v2-AOc">
+                                <rect key="frame" x="333" y="13" width="61" height="30"/>
+                                <state key="normal" title="Cancelar"/>
+                                <connections>
+                                    <action selector="dismissTweet" destination="JbP-bM-CTp" eventType="touchUpInside" id="ZBX-2p-eYw"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jc1-y7-Hhq">
+                                <rect key="frame" x="20" y="71" width="374" height="193"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-ob-Vef">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="4Wf-1z-vH9"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-LS-Den">
+                                        <rect key="frame" x="0.0" y="148" width="374" height="45"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="vVs-j8-7jg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Publicar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPostAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="eOa-K3-4NV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-A3-myq">
+                                <rect key="frame" x="0.0" y="717" width="414" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="lFw-bZ-47e"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NYB-Al-1UR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="iOg-A3-myq" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" id="7M9-3o-dDi"/>
+                            <constraint firstItem="K8q-PK-Aja" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" constant="20" id="IYJ-e3-1UQ"/>
+                            <constraint firstAttribute="bottom" secondItem="iOg-A3-myq" secondAttribute="bottom" id="Ljp-rO-p4b"/>
+                            <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="Jc1-y7-Hhq" secondAttribute="trailing" constant="20" id="c09-TJ-GrZ"/>
+                            <constraint firstItem="Jc1-y7-Hhq" firstAttribute="top" secondItem="K8q-PK-Aja" secondAttribute="bottom" constant="25" id="dF2-PB-V8L"/>
+                            <constraint firstItem="iOg-A3-myq" firstAttribute="trailing" secondItem="NYB-Al-1UR" secondAttribute="trailing" id="dHh-Da-ZYS"/>
+                            <constraint firstItem="K8q-PK-Aja" firstAttribute="top" secondItem="NYB-Al-1UR" secondAttribute="top" constant="10" id="g2a-7X-Zvu"/>
+                            <constraint firstItem="RVx-v2-AOc" firstAttribute="centerY" secondItem="K8q-PK-Aja" secondAttribute="centerY" id="gow-iR-3iv"/>
+                            <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="RVx-v2-AOc" secondAttribute="trailing" constant="20" id="nf8-bW-5Kt"/>
+                            <constraint firstItem="Jc1-y7-Hhq" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" constant="20" id="oF0-y2-Fgp"/>
+                            <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="K8q-PK-Aja" secondAttribute="trailing" constant="20" id="y1q-2d-qh9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newTweetTextView" destination="sAR-ob-Vef" id="0hG-zj-fUR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ycn-10-4c4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2179.7101449275365" y="475.44642857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lGi-Zk-3a5">
@@ -60,8 +151,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bottomImage" width="351.5" height="123"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

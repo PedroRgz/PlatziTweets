@@ -31,6 +31,7 @@
 		B8428C46268C1A7E006FEE12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8428C45268C1A7E006FEE12 /* Assets.xcassets */; };
 		B8428C49268C1A7E006FEE12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8428C47268C1A7E006FEE12 /* LaunchScreen.storyboard */; };
 		B85075B3268D801500AE5DF6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B85075B2268D801500AE5DF6 /* Home.storyboard */; };
+		B8C5A784268F8B3D00932987 /* AddPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C5A783268F8B3D00932987 /* AddPostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B8428C48268C1A7E006FEE12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8428C4A268C1A7E006FEE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B85075B2268D801500AE5DF6 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B8C5A783268F8B3D00932987 /* AddPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 				B82E35EA268E4BA0009C07BC /* Cells */,
 				B85075B2268D801500AE5DF6 /* Home.storyboard */,
 				B82E35E8268E3F05009C07BC /* HomeViewController.swift */,
+				B8C5A783268F8B3D00932987 /* AddPostViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				B82E35DD268E2FE3009C07BC /* PostRequestLocation.swift in Sources */,
 				B82E35DF268E2FEE009C07BC /* LoginRequest.swift in Sources */,
 				B826A6D4268CE0270004E7BA /* LoginViewController.swift in Sources */,
+				B8C5A784268F8B3D00932987 /* AddPostViewController.swift in Sources */,
 				B82E35E9268E3F05009C07BC /* HomeViewController.swift in Sources */,
 				B82E35DB268E2FCB009C07BC /* PostRequest.swift in Sources */,
 				B82E35D7268E2F7C009C07BC /* GeneralResponse.swift in Sources */,
