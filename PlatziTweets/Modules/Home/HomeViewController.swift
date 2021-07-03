@@ -19,13 +19,20 @@ class HomeViewController: UIViewController {
     private let cellId = "TweetTableViewCell"
     private var dataSource = [Post]()
     
+    //MARK: -App's lifecycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setupUI()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
         getPosts()
     }
     
+    //MARK: - Private functions
     private func setupUI(){
         tableView.dataSource = self
         tableView.register(UINib(nibName: cellId, bundle: nil), forCellReuseIdentifier: cellId)

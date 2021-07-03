@@ -25,7 +25,7 @@
                                 <rect key="frame" x="338" y="812" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="JbP-bM-CTp" kind="presentation" id="tvX-YM-lJp"/>
+                                    <segue destination="JbP-bM-CTp" kind="presentation" modalPresentationStyle="fullScreen" id="tvX-YM-lJp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,24 +54,24 @@
             <objects>
                 <viewController id="JbP-bM-CTp" customClass="AddPostViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OzQ-xs-aml">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nuevo Tweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8q-PK-Aja">
-                                <rect key="frame" x="20" y="10" width="374" height="36"/>
+                                <rect key="frame" x="20" y="54" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RVx-v2-AOc">
-                                <rect key="frame" x="333" y="13" width="61" height="30"/>
+                                <rect key="frame" x="333" y="57" width="61" height="30"/>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="dismissTweet" destination="JbP-bM-CTp" eventType="touchUpInside" id="ZBX-2p-eYw"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jc1-y7-Hhq">
-                                <rect key="frame" x="20" y="71" width="374" height="193"/>
+                                <rect key="frame" x="20" y="115" width="374" height="193"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-ob-Vef">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
@@ -101,7 +101,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-A3-myq">
-                                <rect key="frame" x="0.0" y="717" width="414" height="125"/>
+                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="125" id="lFw-bZ-47e"/>
                                 </constraints>
