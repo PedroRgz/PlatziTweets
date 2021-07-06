@@ -208,7 +208,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fUo-9z-amx">
-                                <rect key="frame" x="20" y="240" width="374" height="165"/>
+                                <rect key="frame" x="20" y="240" width="374" height="211"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1te-If-GmR">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="45"/>
@@ -226,8 +226,22 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                     </textField>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sL-Ix-KVs">
+                                        <rect key="frame" x="0.0" y="120" width="374" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recordar email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKB-Zk-GVI">
+                                                <rect key="frame" x="0.0" y="0.0" width="325" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TwL-nU-7Xx">
+                                                <rect key="frame" x="325" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlS-Rh-tSy">
-                                        <rect key="frame" x="0.0" y="120" width="374" height="45"/>
+                                        <rect key="frame" x="0.0" y="166" width="374" height="45"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="B4q-pg-ShC"/>
@@ -260,6 +274,7 @@
                         <outlet property="emailTextField" destination="1te-If-GmR" id="u6f-es-FtH"/>
                         <outlet property="loginButton" destination="IlS-Rh-tSy" id="HRB-HZ-W7c"/>
                         <outlet property="passwordTextField" destination="QzR-66-IVv" id="bkl-bQ-eRt"/>
+                        <outlet property="rememberEmailSwitch" destination="TwL-nU-7Xx" id="N9C-46-dBF"/>
                         <segue destination="3t4-od-RMz" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="Qyc-dD-tnR"/>
                     </connections>
                 </viewController>
@@ -287,7 +302,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZMB-Er-fnI"/>
+        <segue reference="Qyc-dD-tnR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="loginBg" width="640" height="425"/>

@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jc1-y7-Hhq">
-                                <rect key="frame" x="20" y="115" width="374" height="193"/>
+                                <rect key="frame" x="20" y="115" width="374" height="285"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-ob-Vef">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
@@ -83,8 +83,31 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-2M-j93">
+                                        <rect key="frame" x="0.0" y="148" width="374" height="30"/>
+                                        <state key="normal" title="Abrir cámara"/>
+                                        <connections>
+                                            <action selector="openCameraAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="GrD-Fs-CL1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4da-p5-QTo">
+                                        <rect key="frame" x="0.0" y="198" width="374" height="22"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <state key="normal" title="Ver video" image="video.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="openVideoPreviewAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="ob0-xl-NTA"/>
+                                        </connections>
+                                    </button>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zl0-Nc-btQ">
+                                        <rect key="frame" x="0.0" y="230" width="374" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="biq-aO-78m"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-LS-Den">
-                                        <rect key="frame" x="0.0" y="148" width="374" height="45"/>
+                                        <rect key="frame" x="0.0" y="240" width="374" height="45"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="vVs-j8-7jg"/>
@@ -124,6 +147,8 @@
                     </view>
                     <connections>
                         <outlet property="newTweetTextView" destination="sAR-ob-Vef" id="0hG-zj-fUR"/>
+                        <outlet property="previewImageView" destination="zl0-Nc-btQ" id="2gR-s2-dd6"/>
+                        <outlet property="videoButton" destination="4da-p5-QTo" id="GPw-su-D1W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycn-10-4c4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -151,6 +176,7 @@
     </scenes>
     <resources>
         <image name="bottomImage" width="351.5" height="123"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

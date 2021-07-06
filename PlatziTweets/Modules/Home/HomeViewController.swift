@@ -45,19 +45,22 @@ class HomeViewController: UIViewController {
         //llamada a la API
         SN.get(endpoint: EndPoints.getPost){(response: SNResultWithEntity<[Post], ErrorResponse>) in
             //termina la carga
-            SVProgressHUD.dismiss()
+            //SVProgressHUD.dismiss()
             
             switch response{
             case .success(let posts):
                 self.dataSource = posts
                 self.tableView.reloadData()
+                SVProgressHUD.dismiss()
                 
             case .error(let error):
                 //se produce un error, no se puede manejar su componente
+                SVProgressHUD.dismiss()
                 NotificationBanner(title: "Error",
                                    subtitle: "\(error.localizedDescription)",
                                    style: .danger).show()
             case .errorResult(let entity):
+                SVProgressHUD.dismiss()
                 //el error es manejable y devuelve una respuesta
                 NotificationBanner(title: "Error",
                                    subtitle: "\(entity.error)",

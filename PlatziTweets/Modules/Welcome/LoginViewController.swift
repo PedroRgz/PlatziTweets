@@ -15,6 +15,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton:UIButton!
     @IBOutlet weak var emailTextField:UITextField!
     @IBOutlet weak var passwordTextField:UITextField!
+    @IBOutlet weak var rememberEmailSwitch:UISwitch!
+    
+    //MARK: -Properties
+    private let storage = UserDefaults.standard
+    private let emailKey = "email-Key"
     
     //MARK: -Actions
     @IBAction func loginBtnAction(){
@@ -23,10 +28,22 @@ class LoginViewController: UIViewController {
     }
     
 
+    //MARK: -App's lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
+        
+        //verificamos si en los UserDefaults hay algún dato
+        if let storedEmail = storage.string(forKey: emailKey){
+            //si hay algún dato almacenado, entonces lo asignamos al campo de texto
+            emailTextField.text = storedEmail
+            //mantenemos encendido el interruptor
+            rememberEmailSwitch.isOn = true
+        }else{
+            //si no hay datos, entonces el switch se muestra desactivado
+            rememberEmailSwitch.isOn = false
+        }
     }
     
     
@@ -36,6 +53,8 @@ class LoginViewController: UIViewController {
         
         //para hacer el boton redondo
         loginButton.layer.cornerRadius = 25
+        emailTextField.layer.cornerRadius = 25
+        passwordTextField.layer.cornerRadius = 25
     }
     
     private func performLogin(){
@@ -79,6 +98,14 @@ class LoginViewController: UIViewController {
                   //                 style: .success).show()
                 self.performSegue(withIdentifier: "showHome", sender: nil)
                 SimpleNetworking.setAuthenticationHeader(prefix: "", token: user.token)
+                
+                //en caso de que el usario desee que recordemos su correo se implementan los UserDefaults
+                
+                if self.rememberEmailSwitch.isOn{
+                    self.storage.set(email, forKey: self.emailKey)
+                }else{
+                    self.storage.removeObject(forKey: self.emailKey)
+                }
                 
                 DispatchQueue.main.async {
                     FloatingNotificationBanner(title: "Sesión Iniciada",
