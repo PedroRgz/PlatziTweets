@@ -95,6 +95,9 @@
                                 <state key="normal" title="Ver video" image="video.fill" catalog="system">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="openVideoAction" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Bxa-ag-XGw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94X-wH-5Ki">
                                 <rect key="frame" x="0.0" y="486.5" width="400" height="13.5"/>

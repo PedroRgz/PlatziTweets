@@ -40,7 +40,13 @@
                             <constraint firstItem="sgs-QS-NW3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qda-ka-vx5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweets" id="5NI-Si-Wyu"/>
+                    <navigationItem key="navigationItem" title="Tweets" id="5NI-Si-Wyu">
+                        <barButtonItem key="rightBarButtonItem" title="Ver mapa" id="qzz-4B-JH0">
+                            <connections>
+                                <segue destination="RkY-LS-NAT" kind="show" identifier="showMap" id="sqS-xb-1xb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="sgs-QS-NW3" id="CDH-BP-r0Y"/>
                     </connections>
@@ -48,6 +54,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="952.17391304347836" y="89.732142857142847"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="0sC-4l-2xn">
+            <objects>
+                <viewController id="RkY-LS-NAT" customClass="MapViewController" customModule="PlatziTweets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9IO-mg-zWM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6MB-UC-tg7">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GX6-ob-wry"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6MB-UC-tg7" firstAttribute="top" secondItem="GX6-ob-wry" secondAttribute="top" id="8if-Vx-ot5"/>
+                            <constraint firstAttribute="bottom" secondItem="6MB-UC-tg7" secondAttribute="bottom" id="gYt-d3-s4Q"/>
+                            <constraint firstItem="6MB-UC-tg7" firstAttribute="trailing" secondItem="GX6-ob-wry" secondAttribute="trailing" id="n9A-jS-zYp"/>
+                            <constraint firstItem="6MB-UC-tg7" firstAttribute="leading" secondItem="GX6-ob-wry" secondAttribute="leading" id="quh-do-hL7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="cUW-1s-eS1"/>
+                    <connections>
+                        <outlet property="mapContainer" destination="6MB-UC-tg7" id="z84-H9-sJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6A-US-FUm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2179.7101449275365" y="-216.29464285714286"/>
         </scene>
         <!--Add Post View Controller-->
         <scene sceneID="EXG-oB-zJt">
@@ -70,85 +107,82 @@
                                     <action selector="dismissTweet" destination="JbP-bM-CTp" eventType="touchUpInside" id="ZBX-2p-eYw"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Jc1-y7-Hhq">
-                                <rect key="frame" x="20" y="115" width="374" height="285"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="50j-Ag-k3E">
+                                <rect key="frame" x="20" y="90" width="374" height="301"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sAR-ob-Vef">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
-                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dcs-zc-zVm">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="4Wf-1z-vH9"/>
+                                            <constraint firstAttribute="height" constant="150" id="b3i-Qs-TFl"/>
                                         </constraints>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Sm-2M-j93">
-                                        <rect key="frame" x="0.0" y="148" width="374" height="30"/>
-                                        <state key="normal" title="Abrir cámara"/>
-                                        <connections>
-                                            <action selector="openCameraAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="GrD-Fs-CL1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4da-p5-QTo">
-                                        <rect key="frame" x="0.0" y="198" width="374" height="22"/>
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvG-p3-Q4O">
+                                        <rect key="frame" x="0.0" y="155" width="374" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Ps5-TL-5IC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tgE-Nu-hJ7">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="37" id="ji0-7C-Fz4"/>
+                                        </constraints>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Ver video" image="video.fill" catalog="system">
                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="openVideoPreviewAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="ob0-xl-NTA"/>
+                                            <action selector="openVideoPreviewAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="7Re-3s-WLm"/>
                                         </connections>
                                     </button>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zl0-Nc-btQ">
-                                        <rect key="frame" x="0.0" y="230" width="374" height="200"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w53-de-D4n">
+                                        <rect key="frame" x="0.0" y="207" width="374" height="37"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="biq-aO-78m"/>
+                                            <constraint firstAttribute="height" constant="37" id="VUj-eP-1Lk"/>
                                         </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hiT-LS-Den">
-                                        <rect key="frame" x="0.0" y="240" width="374" height="45"/>
+                                        <state key="normal" title="Abrir cámara"/>
+                                        <connections>
+                                            <action selector="openCameraAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="9lO-RT-HGs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPH-VJ-6L1">
+                                        <rect key="frame" x="0.0" y="254" width="374" height="47"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="vVs-j8-7jg"/>
+                                            <constraint firstAttribute="height" constant="47" id="ye1-2C-gx0"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Publicar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="addPostAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="eOa-K3-4NV"/>
+                                            <action selector="addPostAction" destination="JbP-bM-CTp" eventType="touchUpInside" id="pVV-IF-9Xw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomImage" translatesAutoresizingMaskIntoConstraints="NO" id="iOg-A3-myq">
-                                <rect key="frame" x="0.0" y="771" width="414" height="125"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="lFw-bZ-47e"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NYB-Al-1UR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="iOg-A3-myq" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" id="7M9-3o-dDi"/>
+                            <constraint firstItem="50j-Ag-k3E" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" constant="20" id="FB2-7H-egr"/>
                             <constraint firstItem="K8q-PK-Aja" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" constant="20" id="IYJ-e3-1UQ"/>
-                            <constraint firstAttribute="bottom" secondItem="iOg-A3-myq" secondAttribute="bottom" id="Ljp-rO-p4b"/>
-                            <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="Jc1-y7-Hhq" secondAttribute="trailing" constant="20" id="c09-TJ-GrZ"/>
-                            <constraint firstItem="Jc1-y7-Hhq" firstAttribute="top" secondItem="K8q-PK-Aja" secondAttribute="bottom" constant="25" id="dF2-PB-V8L"/>
-                            <constraint firstItem="iOg-A3-myq" firstAttribute="trailing" secondItem="NYB-Al-1UR" secondAttribute="trailing" id="dHh-Da-ZYS"/>
+                            <constraint firstItem="50j-Ag-k3E" firstAttribute="trailing" secondItem="NYB-Al-1UR" secondAttribute="trailing" constant="-20" id="NUp-AN-9Xn"/>
                             <constraint firstItem="K8q-PK-Aja" firstAttribute="top" secondItem="NYB-Al-1UR" secondAttribute="top" constant="10" id="g2a-7X-Zvu"/>
                             <constraint firstItem="RVx-v2-AOc" firstAttribute="centerY" secondItem="K8q-PK-Aja" secondAttribute="centerY" id="gow-iR-3iv"/>
                             <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="RVx-v2-AOc" secondAttribute="trailing" constant="20" id="nf8-bW-5Kt"/>
-                            <constraint firstItem="Jc1-y7-Hhq" firstAttribute="leading" secondItem="NYB-Al-1UR" secondAttribute="leading" constant="20" id="oF0-y2-Fgp"/>
                             <constraint firstItem="NYB-Al-1UR" firstAttribute="trailing" secondItem="K8q-PK-Aja" secondAttribute="trailing" constant="20" id="y1q-2d-qh9"/>
+                            <constraint firstItem="50j-Ag-k3E" firstAttribute="top" secondItem="K8q-PK-Aja" secondAttribute="bottom" id="yeb-E3-srN"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="newTweetTextView" destination="sAR-ob-Vef" id="0hG-zj-fUR"/>
-                        <outlet property="previewImageView" destination="zl0-Nc-btQ" id="2gR-s2-dd6"/>
-                        <outlet property="videoButton" destination="4da-p5-QTo" id="GPw-su-D1W"/>
+                        <outlet property="newTweetTextView" destination="dcs-zc-zVm" id="U56-cm-DlJ"/>
+                        <outlet property="previewImageView" destination="nvG-p3-Q4O" id="6Sq-HX-PWS"/>
+                        <outlet property="videoButton" destination="tgE-Nu-hJ7" id="ArP-o5-wD5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycn-10-4c4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,16 +209,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bottomImage" width="351.5" height="123"/>
         <image name="video.fill" catalog="system" width="128" height="82"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -9,6 +9,7 @@ import UIKit
 import Simple_Networking
 import SVProgressHUD
 import NotificationBannerSwift
+import AVKit
 
 class HomeViewController: UIViewController {
     
@@ -29,6 +30,18 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    //MARK: - Override
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //este método será llamado cuando se haga una transición entre pantallas (solo con storyboards)
+        //tenemos que validar que sea el segue que deseamos y se dirija a la pantalla que queremos
+        
+        //si el segue es el que deseamos y se puede crear una instancia de la pantalla que queremos, entonces...
+        if segue.identifier == "showMap", let mapViewController = segue.destination as? MapViewController{
+            //le pasamos los post que se han descargado para mostrar en la tabla, pero solo los que tienen ubicación
+            mapViewController.posts = dataSource.filter{ $0.hasLocation }
+        }
     }
     
     //MARK: - Private functions
@@ -120,6 +133,20 @@ extension HomeViewController:UITableViewDataSource{
         if let cell = cell as? TweetTableViewCell{
             //Se realizará la configuración de la celda
             cell.setupCellWith(post: dataSource[indexPath.row])
+            
+            cell.needsToShowVideo={ url in
+                //... Se ejecutará el ViewController que en la celda no se puede, por buena práctica
+                //instanciamos el video
+                let avPlayer = AVPlayer(url: url)
+                //instanciamos el controlador que despliega la pantalla para reproducir el video
+                let avPlayerController = AVPlayerViewController()
+                avPlayerController.player = avPlayer
+                
+                self.present(avPlayerController, animated: true) {
+                    //cuando se presente la pantalla, el video comenzará a reproducirse automáticamente
+                    avPlayerController.player?.play()
+                }
+            }
         }
         
         return cell
